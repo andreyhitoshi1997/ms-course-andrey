@@ -1,18 +1,14 @@
 package com.devsuperior.hr_payroll.feignclients;
 
-import com.devsuperior.hr_payroll.entities.Worker;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import com.devsuperior.hr_payroll.entities.Worker;
 
-//Componente que será gerenciado no spring implementado em outras classes
-@Component
-
-@FeignClient(name="hr-worker", url = "localhost:8001", path = "/workers")
+@FeignClient(name = "hr-worker", url = "http://localhost:8001")
 public interface WorkerFeignClient {
-
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/workers/{id}")
     ResponseEntity<Worker> findById(@PathVariable Long id);
 }

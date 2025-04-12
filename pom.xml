@@ -8,5 +8,6 @@
     <modules>
         <module>hr-worker</module>
         <module>hr-payroll</module>
+        <module>hr-eureka-server</module>
     </modules>
     </project>
